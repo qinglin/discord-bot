@@ -8,8 +8,9 @@ class MyClient(discord.Client):
         if message.author == client.user:
             return
 
-        if message.content.startswith('$hello'):
-            await message.channel.send('Hello!')
+        if message.content.startswith('hello'):
+            msg = "Hello" + message.author.name
+            await message.channel.send(msg)
 
 
 client = MyClient()
